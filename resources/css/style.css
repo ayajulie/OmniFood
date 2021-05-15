@@ -224,6 +224,17 @@ header {
   border-bottom: 3px solid #e67e22;
 }
 
+/* Mobile navigation */
+.mobile-nav-icon {
+  float: right;
+  /* you specify this because you didn't add a href to the a tag */
+  cursor: pointer;
+  display: none;
+}
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #fff;
+}
 /* Sticky Navigation*/
 
 .sticky {
@@ -546,4 +557,17 @@ footer p {
   color: #888;
   text-align: center;
   margin-top: 10px;
+}
+
+/* ----------------------------------------------- */
+/* ANIMATIONS*/
+/* ----------------------------------------------- */
+
+.js--wp-1,
+.js--wp-2,
+.js--wp-3,
+.js--wp-4 {
+  opacity: 0;
+  /* you can eventually change the animation-duration */
+  animation-duration: 1s;
 }

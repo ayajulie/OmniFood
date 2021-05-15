@@ -42,37 +42,61 @@ $(document).ready(function () {
 
 
   /* Animations on scroll */
-  $('.js--wp-1').waypoint(function (direction) {
-    $('.js--wp-1').addClass('animated fadeIn');
-  }, {
-    offset: '50%'
-  });
+  // you also need to make it invisible before the animation starts in the css file by setting the opacity to zero
+  $('.js--wp-1').waypoint((direction) => {
+    $('.js--wp-1').addClass('animate__animated animate__fadeIn');
+  },
+    {
+      offset: '50%',
+    }
+  );
+  $('.js--wp-2').waypoint((direction) => {
+    $('.js--wp-2').addClass('animate__animated animate__fadeInLeft');
+  },
+    {
+      offset: '50%',
+    }
+  );
 
-  $('.js--wp-2').waypoint(function (direction) {
-    $('.js--wp-2').addClass('animated fadeInUp');
-  }, {
-    offset: '50%'
-  });
-
-  $('.js--wp-3').waypoint(function (direction) {
-    $('.js--wp-3').addClass('animated fadeIn');
-  }, {
-    offset: '50%'
-  });
-
-  $('.js--wp-4').waypoint(function (direction) {
-    $('.js--wp-4').addClass('animated pulse');
-  }, {
-    offset: '50%'
-  });
+  $('.js--wp-3').waypoint((direction) => {
+    $('.js--wp-3').addClass('animate__animated animate__fadeIn');
+  },
+    {
+      offset: '50%',
+    }
+  );
 
 
-  /* Mobile navigation */
+  $('.js--wp-4').waypoint((direction) => {
+    $('.js--wp-4').addClass('animate__animated animate__bounceIn');
+  },
+    {
+      offset: '50%',
+    }
+  );
+  // to reset the animation when you go back to the top of the page
+  $('.js--header').waypoint(
+    (direction) => {
+      if (direction === 'up') {
+        $('.js--wp-1').removeClass('animate__animated animate__fadeIn');
+        $('.js--wp-2').removeClass('animate__animated animate__fadeInLeft');
+        $('.js--wp-3').removeClass('animate__animated animate__fadeIn');
+        $('.js--wp-4').removeClass('animate__animated animate__bounceIn');
+      }
+    },
+    {
+      offset: '-25%',
+    }
+  );
+
+  /* Mobile navigation  to display and hide the links*/
   $('.js--nav-icon').click(function () {
-    var nav = $('.js--main-nav');
-    var icon = $('.js--nav-icon i');
+    const nav = $('.js--main-nav');
+    const icon = $('.js--nav-icon i');
 
     nav.slideToggle(200);
+
+    // to change the icon depending on the 
 
     if (icon.hasClass('ion-navicon-round')) {
       icon.addClass('ion-close-round');
@@ -82,4 +106,5 @@ $(document).ready(function () {
       icon.removeClass('ion-close-round');
     }
   });
+
 });

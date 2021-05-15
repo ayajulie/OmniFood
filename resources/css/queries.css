@@ -101,7 +101,7 @@
   .main-nav li a:link,
   .main-nav li a:visited {
     display: block;
-    border: 0;
+    border: 0; /*the orange border that appears when hover */
     padding: 10px 0;
     font-size: 100%;
   }
