@@ -478,7 +478,22 @@ input[type="checkbox"] {
 *:focus {
   outline: none;
 }
+.form-message {
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  color: #fff;
+  text-align: center;
+}
 
+.success {
+  background-color: #81d36c;
+}
+.error {
+  background-color: #e97777;
+  display: hidden;
+}
 /* ----------------------------------------------- */
 /* FOOTER */
 /* ----------------------------------------------- */
